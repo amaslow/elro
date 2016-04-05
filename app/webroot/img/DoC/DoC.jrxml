@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DoC" pageWidth="595" pageHeight="943" columnWidth="547" leftMargin="28" rightMargin="20" topMargin="28" bottomMargin="20" uuid="34ad5395-2c74-40df-94f9-2bc77c8501ba">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
+    <parameter name="Date" class="java.util.Date">
+        <defaultValueExpression><![CDATA[]]></defaultValueExpression>
+    </parameter>
+    <parameter name="sapNo" class="java.lang.String">
+        <defaultValueExpression><![CDATA[]]></defaultValueExpression>
+    </parameter>
+    <queryString>
+		<![CDATA[SELECT
+     COALESCE(items.`EMC_CE`,'') AS ITEMS_EMC_CE,
+     COALESCE(items.`EMC1`,'') AS ITEMS_EMC1,
+     COALESCE(items.`EMC2`,'') AS ITEMS_EMC2,
+     COALESCE(items.`EMC3`,'') AS ITEMS_EMC3,
+     COALESCE(items.`EMC4`,'') AS ITEMS_EMC4,
+     COALESCE(items.`EMC5`,'') AS ITEMS_EMC5,
+     COALESCE(items.`EMC6`,'') AS ITEMS_EMC6,
+     COALESCE(items.`EMC7`,'') AS ITEMS_EMC7,
+     COALESCE(items.`EMC8`,'') AS ITEMS_EMC8,
+     COALESCE(items.`EMC9`,'') AS ITEMS_EMC9,
+     COALESCE(items.`EMC10`,'') AS ITEMS_EMC10,
+     COALESCE(items.`LVD_CE`,'') AS ITEMS_LVD_CE,
+     COALESCE(items.`LVD1`,'') AS ITEMS_LVD1,
+     COALESCE(items.`LVD2`,'') AS ITEMS_LVD2,
+     COALESCE(items.`LVD3`,'') AS ITEMS_LVD3,
+     COALESCE(items.`LVD4`,'') AS ITEMS_LVD4,
+     COALESCE(items.`LVD5`,'') AS ITEMS_LVD5,
+     COALESCE(items.`LVD6`,'') AS ITEMS_LVD6,
+     COALESCE(items.`LVD7`,'') AS ITEMS_LVD7,
+     COALESCE(items.`LVD8`,'') AS ITEMS_LVD8,
+     COALESCE(items.`LVD9`,'') AS ITEMS_LVD9,
+     COALESCE(items.`RF_CE`,'') AS ITEMS_RF_CE,
+     COALESCE(items.`RF1`,'') AS ITEMS_RF1,
+     COALESCE(items.`RF2`,'') AS ITEMS_RF2,
+     COALESCE(items.`RF3`,'') AS ITEMS_RF3,
+     COALESCE(items.`RF4`,'') AS ITEMS_RF4,
+     COALESCE(items.`EUP_CE`,'') AS ITEMS_EUP_CE,
+     COALESCE(items.`CPD1`,'') AS ITEMS_CPD1,
+     COALESCE(items.`CPD2`,'') AS ITEMS_CPD2,
+     COALESCE(items.`CPD3`,'') AS ITEMS_CPD3,
+     COALESCE(items.`CPD4`,'') AS ITEMS_CPD4,
+     COALESCE(items.`CPD_DIR`,'') AS ITEMS_CPD_DIR,
+     COALESCE(items.`CPD_CE`,'') AS ITEMS_CPD_CE,
+     COALESCE(items.`RF_F`,'') AS ITEMS_RF_F,
+     COALESCE(items.`ROHS_CE`,'') AS ITEMS_ROHS_CE,
+     items.`ITEM` AS ITEMS_ITEM,
+     items.`SAP` AS ITEMS_SAP,
+     items.`BRAND` AS ITEMS_BRAND,
+     items.`DESCR_EN` AS ITEMS_DESCR_EN,
+     items.`DESCR_FR` AS ITEMS_DESCR_FR,
+     items.`DESCR_DE` AS ITEMS_DESCR_DE
+FROM
+     `items` items
+WHERE 
+    SAP LIKE '$P{sapNo}']]>
+    </queryString>
+    <field name="ITEMS_EMC_CE" class="java.lang.String"/>
+    <field name="ITEMS_EMC1" class="java.lang.String"/>
+    <field name="ITEMS_EMC2" class="java.lang.String"/>
+    <field name="ITEMS_EMC3" class="java.lang.String"/>
+    <field name="ITEMS_EMC4" class="java.lang.String"/>
+    <field name="ITEMS_EMC5" class="java.lang.String"/>
+    <field name="ITEMS_EMC6" class="java.lang.String"/>
+    <field name="ITEMS_EMC7" class="java.lang.String"/>
+    <field name="ITEMS_EMC8" class="java.lang.String"/>
+    <field name="ITEMS_EMC9" class="java.lang.String"/>
+    <field name="ITEMS_EMC10" class="java.lang.String"/>
+    <field name="ITEMS_LVD_CE" class="java.lang.String"/>
+    <field name="ITEMS_LVD1" class="java.lang.String"/>
+    <field name="ITEMS_LVD2" class="java.lang.String"/>
+    <field name="ITEMS_LVD3" class="java.lang.String"/>
+    <field name="ITEMS_LVD4" class="java.lang.String"/>
+    <field name="ITEMS_LVD5" class="java.lang.String"/>
+    <field name="ITEMS_LVD6" class="java.lang.String"/>
+    <field name="ITEMS_LVD7" class="java.lang.String"/>
+    <field name="ITEMS_LVD8" class="java.lang.String"/>
+    <field name="ITEMS_LVD9" class="java.lang.String"/>
+    <field name="ITEMS_RF_CE" class="java.lang.String"/>
+    <field name="ITEMS_RF1" class="java.lang.String"/>
+    <field name="ITEMS_RF2" class="java.lang.String"/>
+    <field name="ITEMS_RF3" class="java.lang.String"/>
+    <field name="ITEMS_RF4" class="java.lang.String"/>
+    <field name="ITEMS_EUP_CE" class="java.lang.String"/>
+    <field name="ITEMS_CPD1" class="java.lang.String"/>
+    <field name="ITEMS_CPD2" class="java.lang.String"/>
+    <field name="ITEMS_CPD3" class="java.lang.String"/>
+    <field name="ITEMS_CPD4" class="java.lang.String"/>
+    <field name="ITEMS_CPD_DIR" class="java.lang.String"/>
+    <field name="ITEMS_CPD_CE" class="java.lang.String"/>
+    <field name="ITEMS_RF_F" class="java.lang.String"/>
+    <field name="ITEMS_ROHS_CE" class="java.lang.String"/>
+    <field name="ITEMS_ITEM" class="java.lang.String"/>
+    <field name="ITEMS_SAP" class="java.lang.String"/>
+    <field name="ITEMS_BRAND" class="java.lang.String"/>
+    <field name="ITEMS_DESCR_EN" class="java.lang.String"/>
+    <field name="ITEMS_DESCR_FR" class="java.lang.String"/>
+    <field name="ITEMS_DESCR_DE" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band splitType="Stretch"/>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <detail>
+        <band height="895" splitType="Prevent">
+            <staticText>
+                <reportElement x="136" y="2" width="283" height="20" uuid="c955c3dc-193c-4b92-b44f-ec02891af7bb"/>
+                <textElement>
+                    <font fontName="Arial Black" size="12" isBold="true" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[EU DECLARATION OF CONFORMITY]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="1" y="35" width="244" height="40" uuid="d5aaac1c-7d3d-4057-8581-5d6f347adf07"/>
+                <textElement>
+                    <font fontName="Arial" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Company:
+Address, City:
+Country:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="35" width="244" height="40" uuid="d5aaac1c-7d3d-4057-8581-5d6f347adf07"/>
+                <textElement>
+                    <font fontName="Arial" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Smartwares Safety & Lighting B.V.
+Broekakkerweg 15, 5126 BD Gilze
+The Netherlands]]></text>
+            </staticText>
+            <image>
+                <reportElement x="361" y="35" width="148" height="40" uuid="a5d5b49e-5708-482b-af2a-a3aefcc1bfec"/>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/smartwares.jpg"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="0" y="92" width="547" height="15" uuid="dcf32eb9-b450-417a-a912-a4897b9ea982"/>
+                <text><![CDATA[This declaration of conformity is issued under the sole responsibility of the manufacturer.]]></text>
+            </staticText>            
+            <staticText>
+                <reportElement x="1" y="112" width="133" height="14" uuid="9f212a49-4179-4574-925f-b1b3302cb18f"/>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[Object of the declaration:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="1" y="130" width="75" height="15" uuid="76f57658-0f16-4647-8a15-7f7e487d515d"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[Description:]]></text>
+            </staticText>
+            <textField>
+                <reportElement style="Detail" x="133" y="130" width="414" height="15" uuid="081a5f7d-7cac-4040-aa59-5105231ba716"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{ITEMS_DESCR_EN}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="1" y="145" width="75" height="15" uuid="3fa1c227-e88c-4798-a2de-79c0f36743e9"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[Product name:]]></text>
+            </staticText>
+            <textField>
+                <reportElement style="SubTitle" x="133" y="145" width="414" height="15" forecolor="#000000" uuid="39d4d9b2-cf08-4a14-ac15-54eb1a0602e4"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12" isBold="true" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_ITEM}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="1" y="159" width="75" height="15" uuid="6aa72399-77e0-465f-b580-b7d1bcc342d2"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[Trade mark:]]></text>
+            </staticText>
+            <textField pattern="" isBlankWhenNull="false">
+                <reportElement style="SubTitle" mode="Transparent" x="133" y="159" width="414" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="7dccd235-0589-49dd-861f-575105fd2a6c"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial" size="12" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_BRAND}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="1" y="187" width="484" height="29" uuid="af5dfee6-911d-439f-9e0b-920d69171550"/>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[The object of the declaration described above is in conformity with the relevant Union harmonisation legislation]]></text>
+            </staticText>
+            
+            <textField isBlankWhenNull="false">
+                <reportElement x="1" y="216" width="212" height="12" isRemoveLineWhenBlank="true" uuid="a20a7f18-dfc7-487e-8cd3-0c6ee6ecc6fa">
+                    <printWhenExpression><![CDATA[$F{ITEMS_EMC_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Electro Magnetic Compatibility Directive"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="240" y="216" width="246" height="12" isRemoveLineWhenBlank="true" uuid="d169bea0-564f-4110-ac2e-1ce0ad421438">
+                    <printWhenExpression><![CDATA[$F{ITEMS_EMC_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC_CE}]]></textFieldExpression>
+            </textField>
+            
+            <textField isBlankWhenNull="false">
+                <reportElement x="1" y="228" width="240" height="12" isRemoveLineWhenBlank="true" uuid="a20a7f18-dfc7-487e-8cd3-0c6ee6ecc6fa">
+                    <printWhenExpression><![CDATA[$F{ITEMS_CPD_DIR}=="(EU) 305/2011"]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["CPD Directive, CPR Regulation (EU)"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="1" y="228" width="240" height="12" isRemoveLineWhenBlank="true" uuid="2bd9249a-7b7d-4b22-91a2-aaf5492e8f86">
+                    <printWhenExpression><![CDATA[$F{ITEMS_CPD_DIR}=="97/23/EC"]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Pressure equipment Directive"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="1" y="228" width="240" height="12" isRemoveLineWhenBlank="true" uuid="f2ee497d-aec7-4db7-a4db-38b74c4555e3">
+                    <printWhenExpression><![CDATA[$F{ITEMS_CPD_DIR}=="2001/95/EC"]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["General product safety Directive"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="1" y="228" width="240" height="12" isRemoveLineWhenBlank="true" uuid="6134cecf-a326-437d-869d-056d4d356852">
+                    <printWhenExpression><![CDATA[$F{ITEMS_CPD_DIR}=="89/686/EEC"]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Personal protective equipment Directive"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="240" y="228" width="240" height="12" isRemoveLineWhenBlank="true" uuid="d169bea0-564f-4110-ac2e-1ce0ad421438">
+                    <printWhenExpression><![CDATA[$F{ITEMS_CPD_DIR}=="(EU) 305/2011" || $F{ITEMS_CPD_DIR}=="97/23/EC" || $F{ITEMS_CPD_DIR}=="2001/95/EC" || $F{ITEMS_CPD_DIR}=="89/686/EEC"]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_CPD_DIR}]]></textFieldExpression>
+            </textField>
+            
+            <textField isBlankWhenNull="true">
+                <reportElement x="1" y="240" width="212" height="12" isRemoveLineWhenBlank="true" uuid="aaf4f54e-c8c5-400d-8084-1e6e49b969f8">
+                    <printWhenExpression><![CDATA[$F{ITEMS_LVD_CE}=="2006/95/EC" || $F{ITEMS_LVD_CE}=="2014/35/EU"]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["LVD Directive"]]></textFieldExpression>
+            </textField>
+            <textField isRemoveLineWhenBlank="true">
+                <reportElement x="240" y="240" width="246" height="12" isRemoveLineWhenBlank="true" uuid="2ef295c0-9840-4b83-8440-a323c752f331">
+                    <printWhenExpression><![CDATA[$F{ITEMS_LVD_CE}=="2006/95/EC" || $F{ITEMS_LVD_CE}=="2014/35/EU"]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD_CE}]]></textFieldExpression>
+            </textField>
+            
+            <textField isBlankWhenNull="false">
+                <reportElement x="1" y="252" width="212" height="12" isRemoveLineWhenBlank="true" uuid="96121492-0733-4496-ba19-784aa4253c5b">
+                    <printWhenExpression><![CDATA[$F{ITEMS_EUP_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Ecodesign Directives (ErP)"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="240" y="252" width="307" height="12" isRemoveLineWhenBlank="true" uuid="6f40291a-097b-4c7a-b554-0565464ccaed">
+                    <printWhenExpression><![CDATA[($F{ITEMS_EUP_CE}!="") &&
+(($F{ITEMS_EUP_CE}=="EU 1194/2012, 874/2012") || ($F{ITEMS_EUP_CE}=="EU 1194/2012, 244/2009, 859/2009, 874/2012") ||
+($F{ITEMS_EUP_CE}=="EU 244/2009, 859/2009, 874/2012") || ($F{ITEMS_EUP_CE}=="EU 245/2009, 874/2012"))]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="Arial" size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA["(2009/125/EC, 2010/30/EU)"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="240" y="252" width="307" height="12" isRemoveLineWhenBlank="true" uuid="7cf2c555-f0ec-45ee-a1f4-693726d9e7ab">
+                    <printWhenExpression><![CDATA[($F{ITEMS_EUP_CE}!="") && ($F{ITEMS_EUP_CE}=="EU 1194/2012" || $F{ITEMS_EUP_CE}=="EU 1194/2012, 244/2009, 859/2009") ]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="Arial" size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA["(2009/125/EC)"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="240" y="252" width="307" height="12" isRemoveLineWhenBlank="true" uuid="295710c9-fc07-4fc6-8527-40642871155e">
+                    <printWhenExpression><![CDATA[$F{ITEMS_EUP_CE}!="" && $F{ITEMS_EUP_CE}=="EU 874/2012"]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="Arial" size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA["(2010/30/EU)"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="0" y="264" width="212" height="12" isRemoveLineWhenBlank="true" uuid="f65430a8-8b91-4cba-91ba-bb5d6ab826b3">
+                    <printWhenExpression><![CDATA[$F{ITEMS_EUP_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Ecodesign Regulations (ErP)"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="240" y="264" width="307" height="12" isRemoveLineWhenBlank="true" uuid="bbf0c65f-d7a8-4245-889e-fe8b79412722">
+                    <printWhenExpression><![CDATA[$F{ITEMS_EUP_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="Arial" size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA["("+$F{ITEMS_EUP_CE}+")"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="1" y="276" width="347" height="12" isRemoveLineWhenBlank="true" uuid="9a991fe5-2068-4217-bc62-565cb985db6e">
+                    <printWhenExpression><![CDATA[$F{ITEMS_RF_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA["R&TTE Directive"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="240" y="276" width="246" height="12" isRemoveLineWhenBlank="true" uuid="d169bea0-564f-4110-ac2e-1ce0ad421438">
+                    <printWhenExpression><![CDATA[$F{ITEMS_RF_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <textFieldExpression><![CDATA["("+$F{ITEMS_RF_CE}+")"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="1" y="288" width="347" height="12" isRemoveLineWhenBlank="true" uuid="6c72afc4-08ed-4bf7-a78b-f66e024b3eed">
+                    <printWhenExpression><![CDATA[$F{ITEMS_ROHS_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial"/>
+                </textElement>
+                <textFieldExpression><![CDATA["RoHS Directive"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement x="240" y="288" width="347" height="12" isRemoveLineWhenBlank="true" uuid="6c72afc4-08ed-4bf7-a78b-f66e024b3eed">
+                    <printWhenExpression><![CDATA[$F{ITEMS_ROHS_CE}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+                    <font fontName="Arial"/>
+                </textElement>
+                <textFieldExpression><![CDATA["("+$F{ITEMS_ROHS_CE}+")"]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="1" y="304" width="546" height="25" isRemoveLineWhenBlank="true" uuid="39ec2bd4-9cd4-4ddc-8277-aa05b0c3e270"/>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[References to the relevant harmonised standards used or references to the other technical specifications in relation to which conformity is declared:]]></text>
+            </staticText>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement style="Detail" positionType="Float" mode="Transparent" x="1" y="331" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="d7b39e32-0c1e-4328-b634-623a90570055"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC1}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement positionType="Float" mode="Transparent" x="1" y="346" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="4cbdfaa3-a900-4733-998b-80f5e07b074e"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC2}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="361" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="cd1604f0-a5cd-43fe-925e-5c793224fbf4"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC3}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="376" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="de131d3b-e918-420b-95b1-54e3b07ae02b"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC4}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="391" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="7b8abaf1-5585-4a54-8fde-921ef82d8b93"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC5}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="406" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="bebeb700-7b88-43b7-958b-81c8644126fa"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC6}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="421" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="ad3fefad-7120-4272-9af9-8c148fe2a8a5"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC7}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="436" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="da5f5127-571c-4c44-8e3c-da4f1f08b6e0"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC8}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="451" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="fe321878-54bb-4c64-ab8c-fa4ef274c41f"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC9}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="466" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="5b69f34e-53c9-44fa-a33f-c9e17b78abca"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_EMC10}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement style="Detail" mode="Transparent" x="1" y="486" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="531a2680-e540-4479-b02a-e109ba7a6bd8"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD1}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="501" width="547" height="16" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="de45504b-3f0e-4d99-9d2b-b1def259080f"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD2}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="517" width="547" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="17fd5d07-6c3b-4af1-a4db-94bf1e8da29b"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD3}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="532" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="83d24ba7-0ad1-46ce-9118-de20338903ee"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD4}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="547" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="780c788f-0b18-452e-84d4-1ff59d390c90"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD5}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="562" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="d5de1481-2e44-40f3-971c-1d746f1be69f"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD6}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="577" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="34cec1a3-eb46-4a1c-b3c9-404531e5074c"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD7}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="592" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="0c120e9e-6fbc-43af-bd88-eb3a18f908bd"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD8}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="607" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="9ccb79f3-a5f0-4c10-b6e3-e1a0bb3cf50f"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_LVD9}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="627" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="088e90b5-80f9-493d-9e46-ecabe42b0637"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_CPD1}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="642" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="22b66cd1-686d-4fb3-837a-501a11f7123f"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_CPD2}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="657" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="2471f31c-6db6-4e5d-a578-6dc3ff503aa5"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_CPD3}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="672" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="601030c4-5b8f-4ab8-87a6-f6e35857b158"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_CPD4}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement style="Detail" mode="Transparent" x="1" y="692" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="2448e6f3-b3a3-4b97-bc1b-f5a7d3b313dc"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_RF1}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="707" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="8e9c49db-2385-4f51-bef4-1c018a354921"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_RF2}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="722" width="546" height="16" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="0b82dffe-856b-4c90-bbfc-56c5d7198780"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_RF3}]]></textFieldExpression>
+            </textField>
+            <textField pattern="" isBlankWhenNull="true">
+                <reportElement mode="Transparent" x="1" y="738" width="546" height="15" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="b1d998bf-81e5-4fe0-a1a1-46afd6740ddb"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+                    <font fontName="Arial Black" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+                    <paragraph lineSpacing="Single"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_RF4}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="1" y="778" width="132" height="14" uuid="0d1115dd-ffd1-493e-95b8-8cc52ac41d26"/>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[Authorized representative:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="140" y="778" width="83" height="26" uuid="9c2e9f29-417f-43fb-b0f7-7c800f962285"/>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[Mr. Ad Netten
+Quality Manager]]></text>
+            </staticText>
+            <image scaleImage="FillFrame" hAlign="Left" vAlign="Middle">
+                <reportElement x="1" y="804" width="195" height="75" uuid="0b6bf763-1c8c-4fa6-98f4-934103d73858"/>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/sign.jpg"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="301" y="778" width="90" height="26" uuid="16d0f06a-97da-4518-a9c7-249d21beb4f8">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="mumbi"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/Mumbi.jpg"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="301" y="778" width="90" height="26" uuid="34e279e5-6778-4e49-8abc-5118c6d2c730">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="EDEN"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/EDEN.jpg"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="301" y="778" width="90" height="26" uuid="d7ea194d-de7a-4fce-b085-8cec3372e31f">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="EDENPRO"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/EDEN.jpg"]]></imageExpression>
+            </image>
+            <image hAlign="Center" vAlign="Middle">
+                <reportElement x="301" y="778" width="99" height="38" uuid="8deade5b-6354-44ca-9af4-69adc29c70b5">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="ELRO"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/ELRO.jpg"]]></imageExpression>
+            </image>
+            <image hAlign="Center" vAlign="Middle">
+                <reportElement x="301" y="778" width="99" height="38" uuid="6cfa7f1d-02aa-475d-ba17-64c81cdb9798">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="FLAMINGO"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/FLAMINGO.jpg"]]></imageExpression>
+            </image>
+            <image hAlign="Center" vAlign="Middle">
+                <reportElement x="301" y="778" width="99" height="38" uuid="d9f14c1a-06ae-49a3-820a-876b7617f4df">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="POWERTEC"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/POWERTEC.jpg"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="318" y="764" width="73" height="52" uuid="596b82c9-a058-4c7c-88c4-f0af0471d95b">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="ELTRIC"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/Eltric.jpg"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="301" y="778" width="100" height="33" uuid="4a3a8feb-49b4-49af-922c-2234dd86346f">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="BYRON"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/BYRON1.jpg"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="301" y="776" width="118" height="35" uuid="11c16e17-c8c4-4f6d-9419-3c9250ff2220">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="RANEX"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/Ranex.jpg"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="313" y="773" width="88" height="43" uuid="0b96e865-6bc1-4731-9a9d-03041b1d7f7a">
+                    <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="BAVARIA"]]></printWhenExpression>
+                </reportElement>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/BAVARIA.jpg"]]></imageExpression>
+            </image>
+            <image>
+                <reportElement x="329" y="828" width="43" height="29" uuid="47db59b6-c5c0-422e-84e9-89f699c3c9e0"/>
+                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/CE.jpg"]]></imageExpression>
+            </image>
+            <textField isBlankWhenNull="true">
+                <reportElement x="430" y="815" width="110" height="38" isRemoveLineWhenBlank="true" uuid="883e3dd4-d9aa-41df-9588-4d07116f48be">
+                    <printWhenExpression><![CDATA[$F{ITEMS_RF_F}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Arial" size="12" isBold="true" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["R&TTE APPROVED"]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="430" y="840" width="117" height="20" isRemoveLineWhenBlank="true" uuid="b8d4a259-e855-4df3-b14a-561a50ed4a7f">
+                    <printWhenExpression><![CDATA[$F{ITEMS_RF_F}!=""]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Arial" size="12" isBold="true" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ITEMS_RF_F}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="879" width="142" height="13" uuid="8fb94a7f-3e5b-4a57-a182-89de697d298e"/>
+                <textElement textAlignment="Right">
+                    <font fontName="Arial"/>
+                </textElement>
+                <text><![CDATA[Place and date of issue: Gilze, ]]></text>
+            </staticText>
+            <textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+                <reportElement x="142" y="879" width="100" height="13" isRemoveLineWhenBlank="true" uuid="649b9020-99f2-46cc-878a-d409c8bb5669"/>
+                <textElement>
+                    <font fontName="Arial"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{Date}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>
