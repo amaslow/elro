@@ -52,7 +52,9 @@ class ItemsController extends AppController {
         }
         if (!empty($item['Item']['COMPONENT1'])){
             for ($i = 1; $i < 11; $i++){ 
-                !empty($item['Item']['COMPONENT'.$i]) ? $this->set('item_comp'.$i, $this->Item->findBySap(substr($item['Item']['COMPONENT'.$i],0,9),array('Item.ID','Item.SAP','Item.QM_STATUS','Item.STATUS'))) : false;
+                $sapek=strstr($item['Item']['COMPONENT'.$i] . ' ',' ' ,true);
+//                !empty($item['Item']['COMPONENT'.$i]) ? $this->set('item_comp'.$i, $this->Item->findBySap(substr($item['Item']['COMPONENT'.$i],0,9),array('Item.ID','Item.SAP','Item.QM_STATUS','Item.STATUS'))) : false;
+                !empty($item['Item']['COMPONENT'.$i]) ? $this->set('item_comp'.$i, $this->Item->findBySap($sapek,array('Item.ID','Item.SAP','Item.QM_STATUS','Item.STATUS'))) : false;                
             }
         }
         $this->loadModel('Standardr');
