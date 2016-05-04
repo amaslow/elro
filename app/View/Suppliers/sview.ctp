@@ -26,110 +26,121 @@ echo $this->Form->create('Supplier');
 <table class="sup_contact">
     <label style="font-weight: bolder;">Contact details</label>
     <tr><td>
-
-
             <table>
+                <?php
+                if ($supplier['Supplier']['FACTORY1_VENDOR']==0 && strlen(trim($supplier['Supplier']['FACTORY1_NAME1']))==0 && strlen(trim($supplier['Supplier']['FACTORY1_NAME2']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY1_ADDRESS1']))==0 && strlen(trim($supplier['Supplier']['FACTORY1_ADDRESS2']))==0 && strlen(trim($supplier['Supplier']['FACTORY1_ADDRESS3']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY1_CITY']))==0 && strlen(trim($supplier['Supplier']['FACTORY1_PROVINCE']))==0 && strlen(trim($supplier['Supplier']['FACTORY1_COUNTRY']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY1_ZIP']))==0 && strlen(trim($supplier['Supplier']['FACTORY1_WWW']))==0 && strlen(trim($supplier['Supplier']['DB_ID1']))==0){
+                    
+                    $displayF2='display: none;';
+                }
+                if ($supplier['Supplier']['FACTORY2_VENDOR']==0 && strlen(trim($supplier['Supplier']['FACTORY2_NAME1']))==0 && strlen(trim($supplier['Supplier']['FACTORY2_NAME2']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY2_ADDRESS1']))==0 && strlen(trim($supplier['Supplier']['FACTORY2_ADDRESS2']))==0 && strlen(trim($supplier['Supplier']['FACTORY2_ADDRESS3']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY2_CITY']))==0 && strlen(trim($supplier['Supplier']['FACTORY2_PROVINCE']))==0 && strlen(trim($supplier['Supplier']['FACTORY2_COUNTRY']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY2_ZIP']))==0 && strlen(trim($supplier['Supplier']['FACTORY2_WWW']))==0 && strlen(trim($supplier['Supplier']['DB_ID2']))==0){
+                    
+                    $displayF2='display: none;';
+                }
+                if ($supplier['Supplier']['FACTORY3_VENDOR']==0 && strlen(trim($supplier['Supplier']['FACTORY3_NAME1']))==0 && strlen(trim($supplier['Supplier']['FACTORY3_NAME2']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY3_ADDRESS1']))==0 && strlen(trim($supplier['Supplier']['FACTORY3_ADDRESS2']))==0 && strlen(trim($supplier['Supplier']['FACTORY3_ADDRESS3']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY3_CITY']))==0 && strlen(trim($supplier['Supplier']['FACTORY3_PROVINCE']))==0 && strlen(trim($supplier['Supplier']['FACTORY3_COUNTRY']))==0
+                    && strlen(trim($supplier['Supplier']['FACTORY3_ZIP']))==0 && strlen(trim($supplier['Supplier']['FACTORY3_WWW']))==0 && strlen(trim($supplier['Supplier']['DB_ID3']))==0){
+                    
+                    $displayF3='display: none;';
+                }
+                ?>
                 <tr><th style="border-bottom: none;"></th>
                     <th>Office</th>
-                    <th>Factory 1</th>
-                    <?php 
-                    if (isset($supplier['Supplier']['FACTORY2_NAME1'])) {
-                        echo '<th>Factory 2</th>';
-                    }
-                    if (isset($supplier['Supplier']['FACTORY3_NAME1'])) {
-                        echo '<th>Factory 3</th>';
+                    <th style="<?php echo $displayF1;?>">Factory 1</th>
+                    <th style="<?php echo $displayF2;?>">Factory 2</th>
+                    <th style="<?php echo $displayF3;?>">Factory 3</th>
+                    <?php
+                    if (isset($supplier['Supplier']['NOTE'])) {
+                    echo '<th>Note</th>';
                     } ?>
-                    <th>Note</th>
                 </tr>
                 <tr>
                     <td style="font-weight: bolder;">SAP number:</td>
-                    <td><?php echo $supplier['Supplier']['OFFICE_VENDOR']; ?></td>
-                    <?php
-                    if (isset($supplier['Supplier']['FACTORY1_NAME1'])) {
-                        echo '<td>' . $supplier['Supplier']['FACTORY1_VENDOR'] . '</td>';
-                    }
-                    if (isset($supplier['Supplier']['FACTORY2_NAME1'])) {
-                        echo '<td>' . $supplier['Supplier']['FACTORY2_VENDOR'] . '</td>';
-                    }
-                    if (isset($supplier['Supplier']['FACTORY3_NAME1'])) {
-                        echo '<td>' . $supplier['Supplier']['FACTORY3_VENDOR'] . '</td>';
-                    }
-                    ?>
+                    <td><?php echo $supplier['Supplier']['OFFICE_VENDOR'] ; ?></td>
+                    <td style="<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_VENDOR'] ;?></td>
+                    <td style="<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_VENDOR'] ;?></td>
+                    <td style="<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_VENDOR'] ;?></td>
                     <td rowspan="12" style="vertical-align: top;"><?php echo $supplier['Supplier']['NOTE']; ?></td>
                 </tr>
                 <tr>
                     <td rowspan="2" style="padding-bottom: 0; font-weight: bolder;">Name:</td>
                     <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['OFFICE_NAME1']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY1_NAME1']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY2_NAME1']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY3_NAME1']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_NAME1']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_NAME1']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_NAME1']; ?></td>
                 </tr>
                 <tr>
                     <td style="padding-top: 0;"><?php echo $supplier['Supplier']['OFFICE_NAME2']; ?></td>
-                    <td style="padding-top: 0;"><?php echo $supplier['Supplier']['FACTORY1_NAME2']; ?></td>
-                    <td style="padding-top: 0;"><?php echo $supplier['Supplier']['FACTORY2_NAME2']; ?></td>
-                    <td style="padding-top: 0;"><?php echo $supplier['Supplier']['FACTORY3_NAME2']; ?></td>
+                    <td style="padding-top: 0;<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_NAME2']; ?></td>
+                    <td style="padding-top: 0;<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_NAME2']; ?></td>
+                    <td style="padding-top: 0;<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_NAME2']; ?></td>
                 </tr>
                 <tr>
                     <td rowspan="3" style="padding-bottom: 0; font-weight: bolder;">Address:</td>
                     <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['OFFICE_ADDRESS1']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY1_ADDRESS1']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY2_ADDRESS1']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY3_ADDRESS1']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_ADDRESS1']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_ADDRESS1']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_ADDRESS1']; ?></td>
                 </tr>
                 <tr>
                     <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['OFFICE_ADDRESS2']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY1_ADDRESS2']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY2_ADDRESS2']; ?></td>
-                    <td style="border-bottom: none; padding-bottom: 0;"><?php echo $supplier['Supplier']['FACTORY3_ADDRESS2']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_ADDRESS2']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_ADDRESS2']; ?></td>
+                    <td style="border-bottom: none; padding-bottom: 0;<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_ADDRESS2']; ?></td>
                 </tr>
                 <tr>
                     <td style="padding-top: 0;"><?php echo $supplier['Supplier']['OFFICE_ADDRESS3']; ?></td>
-                    <td style="padding-top: 0;"><?php echo $supplier['Supplier']['FACTORY1_ADDRESS3']; ?></td>
-                    <td style="padding-top: 0;"><?php echo $supplier['Supplier']['FACTORY2_ADDRESS3']; ?></td>
-                    <td style="padding-top: 0;"><?php echo $supplier['Supplier']['FACTORY3_ADDRESS3']; ?></td>
+                    <td style="padding-top: 0;<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_ADDRESS3']; ?></td>
+                    <td style="padding-top: 0;<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_ADDRESS3']; ?></td>
+                    <td style="padding-top: 0;<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_ADDRESS3']; ?></td>
                 </tr>
                 <tr>
                     <td style="font-weight: bolder;">City:</td>
                     <td><?php echo $supplier['Supplier']['OFFICE_CITY']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY1_CITY']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY2_CITY']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY3_CITY']; ?></td>
+                    <td style="<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_CITY']; ?></td>
+                    <td style="<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_CITY']; ?></td>
+                    <td style="<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_CITY']; ?></td>
                 </tr>
                 <tr>
                     <td style="font-weight: bolder;">State/Province:</td>
                     <td><?php echo $supplier['Supplier']['OFFICE_PROVINCE']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY1_PROVINCE']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY2_PROVINCE']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY3_PROVINCE']; ?></td>
+                    <td style="<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_PROVINCE']; ?></td>
+                    <td style="<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_PROVINCE']; ?></td>
+                    <td style="<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_PROVINCE']; ?></td>
                 </tr>
                 <tr>
                     <td style="font-weight: bolder;">Country:</td>
                     <td><?php echo $supplier['Supplier']['OFFICE_COUNTRY']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY1_COUNTRY']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY2_COUNTRY']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY3_COUNTRY']; ?></td>
+                    <td style="<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_COUNTRY']; ?></td>
+                    <td style="<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_COUNTRY']; ?></td>
+                    <td style="<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_COUNTRY']; ?></td>
                 </tr>
                 <tr>
                     <td style="font-weight: bolder;">Zipcode:</td>
                     <td><?php echo $supplier['Supplier']['OFFICE_ZIP']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY1_ZIP']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY2_ZIP']; ?></td>
-                    <td><?php echo $supplier['Supplier']['FACTORY3_ZIP']; ?></td>
+                    <td style="<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['FACTORY1_ZIP']; ?></td>
+                    <td style="<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['FACTORY2_ZIP']; ?></td>
+                    <td style="<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['FACTORY3_ZIP']; ?></td>
                 </tr>
                 <tr>
                     <td style="font-weight: bolder;">Web:</td>
                     <td><?php echo $this->Text->autoLinkUrls($supplier['Supplier']['OFFICE_WWW'], array('target' => '_blank')); ?></td>
-                    <td><?php echo $this->Text->autoLinkUrls($supplier['Supplier']['FACTORY1_WWW'], array('target' => '_blank')); ?></td>
-                    <td><?php echo $this->Text->autoLinkUrls($supplier['Supplier']['FACTORY2_WWW'], array('target' => '_blank')); ?></td>
-                    <td><?php echo $this->Text->autoLinkUrls($supplier['Supplier']['FACTORY3_WWW'], array('target' => '_blank')); ?></td>
+                    <td style="<?php echo $displayF1;?>"><?php echo $this->Text->autoLinkUrls($supplier['Supplier']['FACTORY1_WWW'], array('target' => '_blank')); ?></td>
+                    <td style="<?php echo $displayF2;?>"><?php echo $this->Text->autoLinkUrls($supplier['Supplier']['FACTORY2_WWW'], array('target' => '_blank')); ?></td>
+                    <td style="<?php echo $displayF3;?>"><?php echo $this->Text->autoLinkUrls($supplier['Supplier']['FACTORY3_WWW'], array('target' => '_blank')); ?></td>
                 </tr>
                 <tr>
                     <td style="font-weight: bolder;">DB_ID:</td>
                     <td><?php echo $supplier['Supplier']['DB_ID']; ?></td>
-                    <td><?php echo $supplier['Supplier']['DB_ID1']; ?></td>
-                    <td><?php echo $supplier['Supplier']['DB_ID2']; ?></td>
-                    <td><?php echo $supplier['Supplier']['DB_ID3']; ?></td>
+                    <td style="<?php echo $displayF1;?>"><?php echo $supplier['Supplier']['DB_ID1']; ?></td>
+                    <td style="<?php echo $displayF2;?>"><?php echo $supplier['Supplier']['DB_ID2']; ?></td>
+                    <td style="<?php echo $displayF3;?>"><?php echo $supplier['Supplier']['DB_ID3']; ?></td>
                 </tr>
             </table>
         </td></tr>
@@ -443,5 +454,8 @@ if (isset($supplier['Supplier']['BSCI_OTHER3_NAME']) && $supplier['Supplier']['B
 $supplierMainDirectory = "G" . DS . "S&L_Data" . DS . "QC" . DS . "Suppliers" . DS . "Asia" . DS;
 if (isset($supplier['Supplier']['FOLDER']) && file_exists('img' . DS . $supplierMainDirectory . $supplier['Supplier']['FOLDER'])) {
     echo $this->Html->link('Folder', array('controller' => 'img' . DS . $supplierMainDirectory . $supplier['Supplier']['FOLDER']), array('target' => '_blank', 'class' => 'button'));
+}
+if ($this->Session->read('Auth.User') && (AuthComponent::user('group') ==0 || AuthComponent::user('id') ==34 || AuthComponent::user('id') ==13)) {
+    echo $this->Html->link('Edit', array('action' => 'sedit', $supplier['Supplier']['ID']), array('class' => 'button'));
 }
 ?>
