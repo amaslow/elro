@@ -2,6 +2,9 @@
 if ($this->Session->read('Auth.User')) {
     echo $this->Html->link('ITEMS database', array('controller' => 'items', 'action' => 'index'), array('target' => '_blank','class' => 'button'));
 }
+if ($this->Session->read('Auth.User') && (AuthComponent::user('group') ==0 || AuthComponent::user('id') ==34 || AuthComponent::user('id') ==13)) {
+    echo $this->Html->link('Add new supplier', array('action' => 'sadd', $supplier['Supplier']['ID']), array('class' => 'button'));
+}
 ?>
 
 <h4 style="float: right"><?php
