@@ -59,7 +59,7 @@ class SuppliersController extends AppController {
             $this->Supplier->create();
             if ($this->Supplier->save($this->request->data)) {
                 $this->Session->setFlash('Supplier has been saved');
-                $this->redirect(array('action' => 'index'));
+                $this->redirect(array('action' => 'sindex'));
             } else {
                 $this->Session->setFlash('Saving supplier error');
             }
@@ -77,8 +77,8 @@ class SuppliersController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             $this->Supplier->id = $id;
             if ($this->Supplier->save($this->request->data)) {
-                $this->Session->setFlash('Supplier has been modificied', 'default', array('class' => 'success'));
-                $this->redirect(array('action' => 'view/' . $id));
+                $this->Session->setFlash('Supplier has been modified', 'default', array('class' => 'success'));
+                $this->redirect(array('action' => 'sview/' . $id));
             } else {
                 $this->Session->setFlash('Editing supplier error');
             }

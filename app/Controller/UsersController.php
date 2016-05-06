@@ -101,6 +101,33 @@ class UsersController extends AppController {
             unset($this->request->data['User']['password']);
         }
     }
+    
+    public function resetpass($id = null) {
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+//        debug($this->request->data);
+        if ($this->request->is('post') || $this->request->is('put')) {
+            $this->data['User']['password'] = $this->request->data['User']['newpass'];
+            if ($this->User->save($this->data)) {
+                $this->Session->setFlash(__('Password has been reset'), 'default', array('class' => 'success'));
+                $this->redirect(array('controller' => 'items', 'action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The profile could not be saved. Please, try again.'));
+            }
+        } else {
+            if ($this->Auth->user('id') != 1) {
+                if ($this->Auth->user('id') != $id) {
+                    $this->Session->setFlash('You are not allowed that operation!');
+                    $this->redirect(array('controller' => 'users', 'action' => 'uindex'));
+                }
+            }
+            $this->request->data = $this->User->read(null, $id);
+            debug($this->request->data);
+            unset($this->request->data['User']['password']);
+        }
+    }
 
     public function unserializesession($data) {
         if (strlen($data) == 0) {
