@@ -90,12 +90,15 @@ class SuppliersController extends AppController {
     }
 
     public function sdelete($id) {
-        if ($this->request->is('get')) {
+        if (!$this->request->is('get')) {
             throw new MethodNotAllowedException();
         }
         if ($this->Supplier->delete($id)) {
             $this->Session->setFlash('Supplier id: ' . $id . ' has been deleted');
-            $this->redirect(array('action' => 'index'));
+            $this->redirect(array('action' => 'sindex'));
+        } else {
+            $this->Session->setFlash('Supplier id: ' . $id . ' has not been deleted');
+            $this->redirect(array('action' => 'sindex'));
         }
     }
 
