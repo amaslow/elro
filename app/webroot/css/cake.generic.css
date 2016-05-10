@@ -361,12 +361,21 @@ table td.actions a {
 .erp_extra td:nth-child(odd) {
     padding-left: 20px;
 }
+
 .sup_contact{
      border:2px solid black;
 }
 .sup_contact th {
     font-style: italic;
     font-size: xx-small;
+}
+
+.sup_contact input {
+     font-size: x-small;
+}
+
+.sup_contact textarea {
+     font-size: x-small;
 }
 
 .sup_bsci{
@@ -378,6 +387,10 @@ table td.actions a {
     font-style: italic;
     font-size: xx-small;
 }
+.sup_bsci input {
+    font-size: x-small;
+}
+
 
 .sup_bsci td:nth-child(odd) {
     padding-left: 20px;
@@ -399,6 +412,10 @@ table td.actions a {
     font-size: xx-small;
 }
 
+.sup_cert input {
+    font-size: x-small;
+}
+
 .sup_cert td {
     padding-right: 20px;
 }
@@ -411,6 +428,10 @@ table td.actions a {
 .sup_decl th {
     font-style: italic;
     font-size: xx-small;
+}
+
+.sup_decl input {
+    font-size: x-small;
 }
 
 .sup_decl td:nth-child(odd) {

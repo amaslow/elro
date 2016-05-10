@@ -7,6 +7,9 @@ if ($this->Session->read('Auth.User') && (AuthComponent::user('group') == 1 || A
         echo $this->Html->link('USERS database', array('controller' => 'users', 'action' => 'uindex'), array('class' => 'button'));
         echo $this->Html->link('Add product', array('controller' => 'items', 'action' => 'add'), array('class' => 'button'));
     }
+if(AuthComponent::user('group')==1 || AuthComponent::user('group')==0){
+        echo $this->Html->link('Search standard', array('controller' => 'items', 'action' => 'search'), array('target' => '_blank','class' => 'button'));
+    }
 }
 ?>
 

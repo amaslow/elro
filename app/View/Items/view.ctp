@@ -54,7 +54,7 @@
                     $('#ItemITEMSSAP').css("color", "red");
                 }
                 
-                $('input[type=text],select').each(function(){
+                $('input[type=text],select').not("[id='ItemPAHCE']").each(function(){
                     var text_value=$(this).val();
                     if(text_value.toLowerCase().indexOf("missing") >= 0){
 //                    if(text_value=='MISSING'){
@@ -894,7 +894,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
     <h4>
         <?php
         if ($this->Session->read('Auth.User') && AuthComponent::user('group') < 2) {
-            echo $this->Html->link('DoC', array('controller' => 'img/DoC/DoC.php?sap='.$item['Item']['SAP'].'&Date='. date("Y-m-d")), array('target' => '_blank', 'class' => 'button'));
+            //echo $this->Html->link('DoC', array('controller' => 'img/DoC/DoC.php?sap='.$item['Item']['SAP'].'&Date='. date("Y-m-d")), array('target' => '_blank', 'class' => 'button'));
             //echo $this->Form->input('DoC_DATE', array('dateFormat' => 'YMD'));
             //echo $this->Time->format("DoC_Date", '%Y.%m.%d');
             //echo 'DoC date:<input id="DoC_date" type="date"/>';
@@ -906,7 +906,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
             }
             echo $this->Html->link('Edit', array('action' => 'edit', $item['Item']['id']), array('class' => 'button','style'=>'margin-right:800px;'));
 //            echo $this->Form->postLink('Delete', array('action' => 'delete', $item['Item']['id']), array('confirm' => 'Are you sure?'));
-            echo '<span>';
+            echo '</span>';
         }
         ?>
     </h4>

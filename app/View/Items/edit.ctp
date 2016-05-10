@@ -251,15 +251,15 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                     <td><?php echo $this->Form->input('SAP', array('label' => 'SAP Nr:', 'size' => '8', 'style' => 'font-size: 20px;')); ?></td>
                     <td><?php
                         $arrBrand=array(
-                            "AJAX"=>"AJAX","ALDI"=>"ALDI","PL AH"=>"PL AH","PL ALDI"=>"PL ALDI","ALPHA"=>"ALPHA","PL ANSLUT"=>"PL ANSLUT","ARTON"=>"ARTON",
+                            "AJAX"=>"AJAX","ALDI"=>"ALDI","PL AH"=>"PL AH","PL ALDI"=>"PL ALDI","ALPHA"=>"ALPHA","ANSLUT"=>"ANSLUT","PL ANSLUT"=>"PL ANSLUT","ARTON"=>"ARTON",
                             "BASELINE"=>"BASELINE","BAVARIA"=>"BAVARIA","BAVARIA/ELRO"=>"BAVARIA/ELRO","PL BLYSS"=>"PL BLYSS","BYRON"=>"BYRON",
                             "PL CASAYA"=>"PL CASAYA","CHIQUE"=>"CHIQUE",
                             "DIFFERENZ"=>"DIFFERENZ","DUOLEC"=>"DUOLEC","PL DUOLEC"=>"PL DUOLEC",
                             "EATEL"=>"EATEL","PL EATEL"=>"PL EATEL","EDEN"=>"EDEN","EDENPRO"=>"EDENPRO","ELRO"=>"ELRO","ELTRIC"=>"ELTRIC","PL ELTRIC"=>"PL ELTRIC","PL ENCHANTE"=>"PL ENCHANTE","ENERGYCARE"=>"ENERGYCARE","EYSTON"=>"EYSTON",
                             "FIRST ALERT"=>"FIRST ALERT","FLAMINGO"=>"FLAMINGO",
                             "PL GAMMA"=>"PL GAMMA","PL GAMMA / JDB"=>"PL GAMMA / JDB","PL GAMMA / OK"=>"PL GAMMA / OK","PL GAMMA BE"=>"PL GAMMA BE","PL GAMMA NL"=>"PL GAMMA NL",
-                            "PL HEMA"=>"PL HEMA","HOFER"=>"HOFER","PL HOFER"=>"PL HOFER","PL HOMEBASE"=>"PL HOMEBASE","HOME EASY"=>"HOME EASY","HOMEEASY"=>"HOMEEASY","HOMEWIZARD"=>"HOMEWIZARD",
-                            "IGLOW"=>"IGLOW","PL IGLOW"=>"PL IGLOW","PL INTERTOYS"=>"PL INTERTOYS",
+                            "PL HEMA"=>"PL HEMA","HOFER"=>"HOFER","PL HOFER"=>"PL HOFER","PL HOMEBASE"=>"PL HOMEBASE","HOME EASY"=>"HOME EASY","HOMEEASY"=>"HOMEEASY","HOMEWIZARD"=>"HOMEWIZARD","HOME WIZARD"=>"HOME WIZARD",
+                            "IGLOW"=>"IGLOW","PL IGLOW"=>"PL IGLOW","PL INTERTOYS"=>"PL INTERTOYS","PL ISY"=>"PL ISY",
                             "PL KONZUM"=>"PL KONZUM","PL KWANTUM"=>"PL KWANTUM",
                             "LIEF"=>"LIEF","PL LIEF"=>"PL LIEF","PL LUXTOOLS"=>"PL LUXTOOLS",
                             "MAPE"=>"MAPE","MIRO"=>"MIRO","MUMBI"=>"MUMBI","PL MUMBI"=>"PL MUMBI",

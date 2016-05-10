@@ -36,7 +36,7 @@ if (file_exists('img' . DS . $directory) && strlen($item['Item']['SAP'])>0) {
             $vid_count++;
             array_push($vid_array, $value);
         }
-        elseif (substr($value, 0, 3) == "DoC" || substr($value, 0, 3) == "DoP") {
+        elseif (substr($value, 0, 3) == "DoC" || substr($value, 0, 7) == "testDoC" || substr($value, 0, 12) == "repealed_DoC" || substr($value, 0, 3) == "DoP") {
             $doc_count++;
             array_push($doc_array, $value);
         }

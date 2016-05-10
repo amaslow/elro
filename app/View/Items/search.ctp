@@ -1,4 +1,4 @@
-<h2 style="text-align: center;color: blue;"><?php echo 'Search for standard: '.$_GET["filters"] ?></h2>
+<h2 style="text-align: center;color: blue;"><?php echo 'Search for standard: <i>'.$_GET["filters"].'</i>' ?></h2>
 <?php
 echo $this->Form->create(null, array('type' => 'get'));
 echo 'Enter the standard you looking for and click ENTER:</br>';

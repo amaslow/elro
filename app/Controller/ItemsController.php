@@ -259,6 +259,8 @@ class ItemsController extends AppController {
                 'ITEM_BULB' => (isset($item['Item']['ITEM_BULB']) ? "'" . $item['Item']['ITEM_BULB'] . "'" : null),
                 'INT_LED' => ($item['Item']['INT_LED'] == 0 ? 0 : 1),
                 'SPECIAL_USE' => (isset($item['Item']['SPECIAL_USE']) ? "'" . $item['Item']['SPECIAL_USE'] . "'" : null),
+                'COORDX' => (isset($item['Item']['COORDX']) ? "'" . $item['Item']['COORDX'] . "'" : null),
+                'COORDY' => (isset($item['Item']['COORDY']) ? "'" . $item['Item']['COORDY'] . "'" : null),
                 'WATTAGE' => (isset($item['Item']['WATTAGE']) ? "'" . $item['Item']['WATTAGE'] . "'" : null),
                 'WATTAGE_RATED' => (isset($item['Item']['WATTAGE_RATED']) ? "'" . $item['Item']['WATTAGE_RATED'] . "'" : null),
                 'LUMEN' => (isset($item['Item']['LUMEN']) ? "'" . $item['Item']['LUMEN'] . "'" : null),

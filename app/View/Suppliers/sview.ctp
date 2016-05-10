@@ -457,5 +457,6 @@ if (isset($supplier['Supplier']['FOLDER']) && file_exists('img' . DS . $supplier
 }
 if ($this->Session->read('Auth.User') && (AuthComponent::user('group') ==0 || AuthComponent::user('id') ==34 || AuthComponent::user('id') ==13)) {
     echo $this->Html->link('Edit', array('action' => 'sedit', $supplier['Supplier']['ID']), array('class' => 'button'));
+    echo $this->Html->link('Delete', array('action' => 'sdelete', $supplier['Supplier']['ID']), array('class' => 'button','confirm' => 'Are you sure?'));
 }
 ?>
