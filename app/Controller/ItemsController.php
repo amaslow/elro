@@ -313,11 +313,11 @@ class ItemsController extends AppController {
         $certDirectory = 'img' . DS . 'G' . DS . 'S&L_Data' . DS . 'QC' . DS . 'Certificates' . DS . $item_folder;
         $certSubDirectory = $certDirectory . DS . '(' . $this->Item->field('ITEM_S') . ')_' . str_replace('.', '', $this->Item->field('SUPPLIER'));
         if ($this->request->is('post') || $this->request->is('put')) {
-            mkdir($certSubDirectory . DS . 'Adaptor', 0755, true);
-            mkdir($certSubDirectory . DS . 'Battery', 0755, true);
-            mkdir($certSubDirectory . DS . 'Correspondence', 0755, true);
-            mkdir($certSubDirectory . DS . 'Diagrams', 0755, true);
-            mkdir($certSubDirectory . DS . 'QC', 0755, true);
+//            mkdir($certSubDirectory . DS . 'Adaptor', 0755, true);
+//            mkdir($certSubDirectory . DS . 'Battery', 0755, true);
+            mkdir($certSubDirectory . DS . 'Correspondence & QC', 0755, true);
+//            mkdir($certSubDirectory . DS . 'Diagrams', 0755, true);
+//            mkdir($certSubDirectory . DS . 'QC', 0755, true);
             mkdir($certSubDirectory . DS . '_Done', 0755, true);
             $this->Session->setFlash('Folder has been created', 'default', array('class' => 'success'));
             $this->redirect(array('action' => 'edit/' . $id));
