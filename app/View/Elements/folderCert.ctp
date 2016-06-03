@@ -1,6 +1,7 @@
 <?php
+
 if (file_exists('img' . DS . $certDirectory . $item)) {
-    echo '<table class="prodcon">';
+    echo '<table class="prodcon folders">';
     $mainDir = scandir('img' . DS . $certDirectory . $item . DS);
     $dir_count = $folders_count = $folderFiles_count = $lvd_count = $emc_count = $rf_count = $cpr_count = $erp_count = $chem_count = $others_count = 0;
     $dir_array = $folders_array = $lvd_array = $emc_array = $rf_array = $cpr_array = $erp_array = $chem_array = $others_array = array();
@@ -8,35 +9,47 @@ if (file_exists('img' . DS . $certDirectory . $item)) {
     foreach ($mainDir as $dir_value) {
         if (!is_dir($dir_value) && substr($dir_value, 0, 6) !== 'Thumbs') {
             $dir_count++;
-            array_push($dir_array, $dir_value);
+            $ctime = filemtime('img' . DS . $certDirectory . $item . DS . $dir_value);
+            //array_push($dir_array, $dir_value);
+            $dir_array[$ctime] = $dir_value;
         }
     }
+    krsort($dir_array);
+    $firstElement= current($dir_array);
+
     if ($dir_count > 1) {
-        echo '<td>';
         foreach ($dir_array as $dir_array) {
-            echo $this->Html->link($dir_array, array('controller' => 'img' . DS . $certDirectory . $item . DS . $dir_array), array('target' => '_blank')) . '<br/>';
+            if ($dir_array!=$firstElement){
+                $folderColor='color:gray; font-size: 90%;';
+            }
+            echo '<td>';
+            echo $this->Html->link($dir_array, array('controller' => 'img' . DS . $certDirectory . $item . DS . $dir_array), array('style'=>$folderColor,'target' => '_blank'));
+            echo '</td>';
+            echo '<td style="font-style:italic;">';
+            echo date("Y-m-d", filemtime('img' . DS . $certDirectory . $item . DS . $dir_array));
+            echo '</td>';
+            echo '</tr>';
         }
-        echo '</td>';
     } else {
-    $subDir = 'img' . DS . $certDirectory . $item . DS . $dir_array[0];
-    if (file_exists($subDir . DS . 'Certificates')){
-        $subDirCon = scandir($subDir . DS . 'Certificates');
-        $subDir = $subDir . DS . 'Certificates';
-    } else {
-        $subDirCon = scandir($subDir);
-    }
+        $subDir = 'img' . DS . $certDirectory . $item . DS . $firstElement;
+        if (file_exists($subDir . DS . 'Certificates')) {
+            $subDirCon = scandir($subDir . DS . 'Certificates');
+            $subDir = $subDir . DS . 'Certificates';
+        } else {
+            $subDirCon = scandir($subDir);
+        }
         foreach ($subDirCon as $value) {
 //            if (strpos(strtolower($value), 'done') !== false || strpos(strtolower($value), 'batt') !== false || strpos(strtolower($value), 'power') !== false || strpos(strtolower($value), 'adapter') !== false || strpos(strtolower($value), 'patent') !== false || strpos(strtolower($value), '.lnk') !== false) {
-            if((!is_dir($value) &&  pathinfo($value, PATHINFO_EXTENSION)==null) || strpos(strtolower($value), '.lnk') !== false){
+            if ((!is_dir($value) && pathinfo($value, PATHINFO_EXTENSION) == null) || strpos(strtolower($value), '.lnk') !== false) {
                 $subSubDir = scandir($subDir . DS . $value);
-                $folderFiles_count=0;
-                foreach($subSubDir as $subSubDir){
+                $folderFiles_count = 0;
+                foreach ($subSubDir as $subSubDir) {
                     $folderFiles_count++;
                 }
                 $folders_count++;
                 //array_push($folders_array, $value);
-                $folderFiles_count=$folderFiles_count-2;
-                $folders_array[$value]=$folderFiles_count;
+                $folderFiles_count = $folderFiles_count - 2;
+                $folders_array[$value] = $folderFiles_count;
             } elseif (strpos(strtolower($value), 'lvd') !== false || strpos(strtolower($value), '_gs') !== false || strpos(strtolower($value), 'cdf') !== false) {
                 $lvd_count++;
                 array_push($lvd_array, $value);
@@ -89,10 +102,10 @@ if (file_exists('img' . DS . $certDirectory . $item)) {
             echo "<td>";
             foreach ($folders_array as $key => $amount) {
                 if (strpos(strtolower($key), '.lnk') !== false) {
-                    $shortcut = substr(str_replace('.lnk','',str_replace('€', '\\',$key)),33);
-                    echo $this->Html->link('Shortcut - ' . $shortcut, array('controller' => 'img' . DS . $certDirectory . DS . $shortcut ), array('class' => 'shortcutfolder', 'target' => '_blank')) . '<br/>';
+                    $shortcut = substr(str_replace('.lnk', '', str_replace('€', '\\', $key)), 33);
+                    echo $this->Html->link('Shortcut - ' . $shortcut, array('controller' => 'img' . DS . $certDirectory . DS . $shortcut), array('class' => 'shortcutfolder', 'target' => '_blank')) . '<br/>';
                 } else {
-                    if ($amount > 0 || strpos(strtolower($key), 'done') !== false){
+                    if ($amount > 0 || strpos(strtolower($key), 'done') !== false) {
                         echo $this->Html->link($key, array('controller' => $subDir . DS . $key), array('class' => 'certfolder', 'target' => '_blank')) . '<br/>';
                     }
                 }

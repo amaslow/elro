@@ -270,7 +270,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                             "SAMSUNG"=>"SAMSUNG","PL SCANPART"=>"PL SCANPART","SMARTLIGHTS"=>"SMARTLIGHTS","SMARTWARES"=>"SMARTWARES",
                             "TECHNETIX"=>"TECHNETIX",
                             "UNBRANDED"=>"UNBRANDED",
-                            "XQLITE"=>"XQLITE","XQ-LITE BY COSM"=>"XQ-LITE BY COSM",
+                            "XQLITE"=>"XQLITE","XQ-LITE BY COSM"=>"XQ-LITE BY COSM","XQLITE BY COSMO"=>"XQLITE BY COSMO",
                             "PL WATSHOME"=>"PL WATSHOME"
                             );
                         echo $this->Form->input('BRAND', array('options'=>$arrBrand, 'label'=>'Brand:', 'selected'=>$item['Item']['BRAND']));

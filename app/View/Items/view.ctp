@@ -666,13 +666,12 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
             <?php endif;
             $coordX = $this->request->data['Item']['COORDX'];
             $coordY = $this->request->data['Item']['COORDY'];
-            if (strlen($item['Item']['SPECIAL_USE'])>0):?>
+            ?>
                 <td>Special purpose:</td><td><?php echo $this->Form->input('SPECIAL_USE', array('readonly' => 'readonly', 'style'=>'font-weight: bold'));?></td>
                 <?php if ($coordX <> '' or $coordY <> ''):?>
                 <td>Chromaticity coordinates: x=</td><td><?php echo $this->Form->input('COORDX', array('readonly' => 'readonly', 'size' => '5'));?></td>
                 <td style="text-align: left; padding-left: 1px;">, y=</td><td><?php echo $this->Form->input('COORDY', array('readonly' => 'readonly', 'size' => '5'));?></td>
-                <?php endif;
-            endif;?>
+                <?php endif;?>
             </tr>
             <?php if ($coordX <> '' or $coordY <> ''):?>
             <tr>
@@ -705,15 +704,15 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                     $textY = 'y > ' . $maxY;
                     $colY = 'green';
                 endif;
-                if (strlen($item['Item']['SPECIAL_USE'])>0):?>
+                ?>
                 <td></td><td></td>
                 <td colspan="2" style="text-align: right; color: <?php echo $colX;?>;"><?php echo $textX; ?></td>
                 <td colspan="2" style="color: <?php echo $colY;?>;"><?php echo ' , ' . $textY; ?></td>
-                <?php endif;?>
+
             </tr>
             <?php endif;?>
         </table>
-            <?php if (strlen($item['Item']['SPECIAL_USE'])>0 and $colX <> 'red' and colY <> 'red'):?>
+            <?php if ($colX <> 'red' and colY <> 'red'):?>
         <p style="text-align: center;"><i><b> Not suitable for household room illumination</b></i></p>
             <?php endif;?>
         <label style="color: green; font-style: italic; font-size: smaller;">Packaging</label>
