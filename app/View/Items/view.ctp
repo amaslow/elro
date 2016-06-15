@@ -348,10 +348,10 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
             <?php if ($item['Item']['PHOTOBIOL']==1):?>
                 <td style="text-align: right; color: blue;">Photobiol.</td>
                 <td><?php echo $this->Form->input('PHOTOBIOL', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'return readOnlyCheckBox()'));?></td>
-                <td><?php echo $this->Form->input('PHOTOBIOL_TR', array('readonly' => 'readonly', 'size' => '10'));?></td>
+                <td style="padding-right: 10px;"><?php echo $this->Form->input('PHOTOBIOL_TR', array('readonly' => 'readonly', 'size' => '10'));?></td>
             <?php endif;
             if ($item['Item']['IPCLASS']==1):?>
-                <td style="text-align: right; color: blue;">IP</td>
+                <td style="text-align: right; color: blue; <?php echo (isset($item['Item']['IP_RATE1']) ? 'font-size: larger;':null);?>">IP<?php echo (isset($item['Item']['IP_RATE1']) ? $item['Item']['IP_RATE1'].$item['Item']['IP_RATE2']:null);?></td>
                 <td><?php echo $this->Form->input('IPCLASS', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'return readOnlyCheckBox()'));?></td>
                 <td><?php echo $this->Form->input('IPCLASS_TR', array('readonly' => 'readonly', 'size' => '8'));?></td>
             <?php endif;
@@ -360,10 +360,10 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
             <?php if ($item['Item']['PHOTOBIOL']==1):?>
                 <td style="text-align: right; color: blue;">Photobiol.</td>
                 <td><?php echo $this->Form->input('PHOTOBIOL', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'return readOnlyCheckBox()'));?></td>
-                <td><?php echo $this->Form->input('PHOTOBIOL_TR', array('readonly' => 'readonly', 'size' => '10'));?></td>
+                <td  style="padding-right: 10px;"><?php echo $this->Form->input('PHOTOBIOL_TR', array('readonly' => 'readonly', 'size' => '10'));?></td>
             <?php endif;
             if ($item['Item']['IPCLASS']==1):?>
-                <td style="text-align: right; color: blue;">IP</td>
+                <td style="text-align: right; color: blue;<?php echo (isset($item['Item']['IP_RATE1']) ? 'font-size: larger;':null);?>">IP<?php echo (isset($item['Item']['IP_RATE1']) ? $item['Item']['IP_RATE1'].$item['Item']['IP_RATE2']:null);?></td>
                 <td><?php echo $this->Form->input('IPCLASS', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'return readOnlyCheckBox()'));?></td>
                 <td><?php echo $this->Form->input('IPCLASS_TR', array('readonly' => 'readonly', 'size' => '8'));?></td>
             <?php endif;
@@ -405,6 +405,8 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 <td><?php echo $this->Form->input('RF_NB', array('readonly' => 'readonly', 'size' => '10')); ?></td>
                 <td style="text-align: right">N.B. nr</td>
                 <td colspan="2"><?php echo $this->Form->input('RF_NBN', array('readonly' => 'readonly', 'size' => '2')); ?></td>
+                <td colspan="3" style="text-align: right">Frequency</td>
+                <td colspan="2"><?php echo $this->Form->input('RF_F', array('readonly' => 'readonly', 'size' => '6')); ?></td>
             </tr>
             <?php endif;
             if ($item['Item']['CPD']==1):?>

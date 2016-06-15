@@ -202,6 +202,8 @@ class ItemsController extends AppController {
                 'PHOTOBIOL_TR' => (isset($item['Item']['PHOTOBIOL_TR']) ? "'" . $item['Item']['PHOTOBIOL_TR'] . "'" : null),
                 'IPCLASS' => ($item['Item']['IPCLASS'] == 0 ? 0 : 1),
                 'IPCLASS_TR' => (isset($item['Item']['IPCLASS_TR']) ? "'" . $item['Item']['IPCLASS_TR'] . "'" : null),
+                'IP_RATE1' => (isset($item['Item']['IP_RATE1']) ? "'" . $item['Item']['IP_RATE1'] . "'" : null),
+                'IP_RATE2' => (isset($item['Item']['IP_RATE2']) ? "'" . $item['Item']['IP_RATE2'] . "'" : null),
                 'EMC' => ($item['Item']['EMC'] == 0 ? 0 : 1),
                 'EMC_CE' => (isset($item['Item']['EMC_CE']) ? "'" . $item['Item']['EMC_CE'] . "'" : null),
                 'EMC_CERT' => (isset($item['Item']['EMC_CERT']) ? "'" . $item['Item']['EMC_CERT'] . "'" : null),
@@ -239,8 +241,24 @@ class ItemsController extends AppController {
                 'PAH_CE' => (isset($item['Item']['PAH_CE']) ? "'" . $item['Item']['PAH_CE'] . "'" : null),
                 'BATT' => ($item['Item']['BATT'] == 0 ? 0 : 1),
                 'BATT_M' => (isset($item['Item']['BATT_M']) ? "'" . $item['Item']['BATT_M'] . "'" : null),
+                'BATT_QUA1' => (isset($item['Item']['BATT_QUA1']) ? "'" . $item['Item']['BATT_QUA1'] . "'" : null),
+                'BATT_BRAND1' => (isset($item['Item']['BATT_BRAND1']) ? "'" . $item['Item']['BATT_BRAND1'] . "'" : null),
+                'BATT_TYPE1' => (isset($item['Item']['BATT_TYPE1']) ? "'" . $item['Item']['BATT_TYPE1'] . "'" : null),
+                'BATT_SIZE1' => (isset($item['Item']['BATT_SIZE1']) ? "'" . $item['Item']['BATT_SIZE1'] . "'" : null),
+                'BATT_VOLT1' => (isset($item['Item']['BATT_VOLT1']) ? "'" . $item['Item']['BATT_VOLT1'] . "'" : null),
+                'BATT_ACCU1' => ($item['Item']['BATT_ACCU1'] == 0 ? 0 : 1),
+                'BATT_CAP1' => (isset($item['Item']['BATT_CAP1']) ? "'" . $item['Item']['BATT_CAP1'] . "'" : null),
+                'BATT_REPL1' => ($item['Item']['BATT_REPL1'] == 0 ? 0 : 1),
                 'BATT2' => ($item['Item']['BATT2'] == 0 ? 0 : 1),
-                'BATT_TR2' => (isset($item['Item']['BATT_TR2']) ? "'" . $item['Item']['BATT_TR2'] . "'" : null)
+                'BATT_TR2' => (isset($item['Item']['BATT_TR2']) ? "'" . $item['Item']['BATT_TR2'] . "'" : null),
+                'BATT_QUA2' => (isset($item['Item']['BATT_QUA2']) ? "'" . $item['Item']['BATT_QUA2'] . "'" : null),
+                'BATT_BRAND2' => (isset($item['Item']['BATT_BRAND2']) ? "'" . $item['Item']['BATT_BRAND2'] . "'" : null),
+                'BATT_TYPE2' => (isset($item['Item']['BATT_TYPE2']) ? "'" . $item['Item']['BATT_TYPE2'] . "'" : null),
+                'BATT_SIZE2' => (isset($item['Item']['BATT_SIZE2']) ? "'" . $item['Item']['BATT_SIZE2'] . "'" : null),
+                'BATT_VOLT2' => (isset($item['Item']['BATT_VOLT2']) ? "'" . $item['Item']['BATT_VOLT2'] . "'" : null),
+                'BATT_ACCU2' => ($item['Item']['BATT_ACCU2'] == 0 ? 0 : 1),
+                'BATT_CAP2' => (isset($item['Item']['BATT_CAP2']) ? "'" . $item['Item']['BATT_CAP2'] . "'" : null),
+                'BATT_REPL2' => ($item['Item']['BATT_REPL2'] == 0 ? 0 : 1)
                     ), array('ITEM_S' => $this->Item->field('ITEM_S'))
             );
             $this->Session->setFlash('All certificates info has been copied', 'default', array('class' => 'success'));

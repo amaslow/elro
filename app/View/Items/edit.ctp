@@ -515,6 +515,8 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 <td><?php echo $this->Form->input('PHOTOBIOL', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'cert_set_text(this.checked,this.id)')); ?></td>
                 <td><?php echo $this->Form->input('PHOTOBIOL_TR', array('options'=>array("EN62471"=>"EN62471","MISSING"=>"MISSING"),'empty'=>'','label'=>false, 'selected'=>$item['Item']['PHOTOBIOL_TR']));?></td>
                 <td style="text-align: right; color: blue;">IP</td>
+                <td style="font-size: xx-small;"><?php echo $this->Form->input('IP_RATE1', array('options'=>array("X"=>"X","0"=>"0","1"=>"1","2"=>"2","3"=>"3","4"=>"4","5"=>"5","6"=>"6"),'empty'=>'','label'=>false, 'selected'=>  $item['Item']['IP_RATE1']));?></td>
+                <td style="font-size: xx-small;"><?php echo $this->Form->input('IP_RATE2', array('options'=>array("X"=>"X","0"=>"0","1"=>"1","2"=>"2","3"=>"3","4"=>"4","5"=>"5","6"=>"6","7"=>"7","8"=>"8"),'empty'=>'','label'=>false, 'selected'=>  $item['Item']['IP_RATE2']));?></td>
                 <td><?php echo $this->Form->input('IPCLASS', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'cert_set_text(this.checked,this.id)')); ?></td>
                 <td><?php echo $this->Form->input('IPCLASS_TR', array('options'=>array("EN60529"=>"EN60529","Inside LVD"=>"Inside LVD","MISSING"=>"MISSING"),'empty'=>'','label'=>false, 'selected'=>$item['Item']['IPCLASS_TR']));?></td>
             </tr>
@@ -537,7 +539,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 <td><?php echo $this->Form->input('RF_NB', array('options'=>$arrNB,'empty' =>'','label'=>false, 'selected'=>$item['Item']['RF_NB']));?></td>
                 <td style="text-align: right">N.B. nr</td>
                 <td colspan="2"><?php echo $this->Form->input('RF_NBN', array( 'size' => '2')); ?></td>
-                <td style="text-align: right">Frequency</td>
+                <td colspan="3" style="text-align: right">Frequency</td>
                 <td colspan="2"><?php echo $this->Form->input('RF_F', array( 'size' => '6')); ?></td>
             </tr>
             <tr>
@@ -571,7 +573,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 <td style="text-align: right; color: blue;">PAH</td>
                 <td><?php echo $this->Form->input('PAH', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'cert_set_text(this.checked,this.id)')); ?></td>
                 <td><?php echo $this->Form->input('PAH_CE', array('options'=>array("ZEK 01.4-08"=>"ZEK 01.4-08","AfPS GS 2014:01 PAK"=>"AfPS GS 2014:01 PAK","MISSING"=>"MISSING"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['PAH_CE']));?></td>
-                <td style="text-align: right; color: blue;">REACH</td>
+                <td colspan="3" style="text-align: right; color: blue;">REACH</td>
                 <td><?php echo $this->Form->input('REACH', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'cert_set_text(this.checked,this.id)')); ?></td>
                 <td><?php echo $this->Form->input('REACH_CE', array('options'=>array("Declaration"=>"Declaration","1907/2006"=>"1907/2006","MISSING"=>"MISSING"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['REACH_CE']));?></td>
                 <td style="text-align: right;">Phthalate Rep.</td><td><?php echo $this->Form->input('PHTH', array('div' => false, 'label' => false, 'type' => 'checkbox')); ?></td>            

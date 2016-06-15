@@ -10,11 +10,11 @@ if (file_exists('img' . DS . $certDirectory . $item)) {
         if (!is_dir($dir_value) && substr($dir_value, 0, 6) !== 'Thumbs') {
             $dir_count++;
             $ctime = filemtime('img' . DS . $certDirectory . $item . DS . $dir_value);
-            //array_push($dir_array, $dir_value);
-            $dir_array[$ctime] = $dir_value;
+            array_push($dir_array, $dir_value);
+            //$dir_array[$ctime] = $dir_value;
         }
     }
-    krsort($dir_array);
+    ksort($dir_array);
     $firstElement= current($dir_array);
 
     if ($dir_count > 1) {
@@ -73,9 +73,10 @@ if (file_exists('img' . DS . $certDirectory . $item)) {
                 array_push($others_array, $value);
             }
         }
-        if ($folders_count > 0) {
-            echo "<th> Subfolders </th>";
-        }
+        
+//        if ($folders_count > 0) {
+//            echo "<th> Subfolders </th>";
+//        }
         if ($lvd_count > 0) {
             echo "<th> LVD </th>";
         }
@@ -97,21 +98,8 @@ if (file_exists('img' . DS . $certDirectory . $item)) {
         if ($others_count > 0) {
             echo "<th> Others </th>";
         }
+        
         echo '<tr>';
-        if ($folders_count > 0) {
-            echo "<td>";
-            foreach ($folders_array as $key => $amount) {
-                if (strpos(strtolower($key), '.lnk') !== false) {
-                    $shortcut = substr(str_replace('.lnk', '', str_replace('€', '\\', $key)), 33);
-                    echo $this->Html->link('Shortcut - ' . $shortcut, array('controller' => 'img' . DS . $certDirectory . DS . $shortcut), array('class' => 'shortcutfolder', 'target' => '_blank')) . '<br/>';
-                } else {
-                    if ($amount > 0 || strpos(strtolower($key), 'done') !== false) {
-                        echo $this->Html->link($key, array('controller' => $subDir . DS . $key), array('class' => 'certfolder', 'target' => '_blank')) . '<br/>';
-                    }
-                }
-            }
-            echo "</td>";
-        }
         if ($lvd_count > 0) {
             echo "<td>";
             foreach ($lvd_array as $value) {
@@ -160,6 +148,21 @@ if (file_exists('img' . DS . $certDirectory . $item)) {
                 echo $this->Html->link($value, array('controller' => $subDir . DS . $value), array('target' => '_blank')) . '<br/>';
             }
             echo "</td>";
+        }
+        echo '</tr>';
+        echo '<tr>';
+        if ($folders_count > 0) {
+            foreach ($folders_array as $key => $amount) {
+                if (strpos(strtolower($key), '.lnk') !== false) {
+                    $shortcut = substr(str_replace('.lnk', '', str_replace('€', '\\', $key)), 33);
+                    echo $this->Html->link('Shortcut - ' . $shortcut, array('controller' => 'img' . DS . $certDirectory . DS . $shortcut), array('class' => 'shortcutfolder', 'target' => '_blank')) . '</br>';
+                } else {
+                    if ($amount > 0 || strpos(strtolower($key), 'done') !== false) {
+                        echo $this->Html->link($key, array('controller' => $subDir . DS . $key), array('class' => 'certfolder', 'target' => '_blank')) . '&nbsp&nbsp&nbsp&nbsp&nbsp' ;
+                    }
+                }
+            }
+
         }
         echo '</tr>';
     }
