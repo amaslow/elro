@@ -111,7 +111,9 @@ class ItemsController extends AppController {
         }
         if (!empty($item['Item']['COMPONENT1'])) {
             for ($i = 1; $i < 11; $i++) {
-                !empty($item['Item']['COMPONENT' . $i]) ? $this->set('item_comp' . $i, $this->Item->findBySap(substr($item['Item']['COMPONENT' . $i], 0, 9), array('Item.QM_STATUS'))) : false;
+                $sapek = strstr($item['Item']['COMPONENT' . $i] . ' ', ' ', true);
+                //!empty($item['Item']['COMPONENT' . $i]) ? $this->set('item_comp' . $i, $this->Item->findBySap(substr($item['Item']['COMPONENT' . $i], 0, 9), array('Item.QM_STATUS'))) : false;
+                !empty($item['Item']['COMPONENT' . $i]) ? $this->set('item_comp' . $i, $this->Item->findBySap($sapek, array('Item.QM_STATUS'))) : false;
             }
         }
         if ($this->request->is('post') || $this->request->is('put')) {
@@ -342,7 +344,7 @@ class ItemsController extends AppController {
         $item = $this->Item->findById($id);
         $sapWithoutDots = $sapWithoutDots = str_replace('.', '', $item['Item']['SAP']);
         if ($this->request->is('post') || $this->request->is('put')) {
-            mkdir('img' . DS . 'G' . DS . 'S&L_Data' . DS . 'Product Content' . DS . 'PRODUCTS' . DS . $sapWithoutDots, 0755, true);
+            mkdir('img' . DS . 'X' . DS . 'Smartwares - Product Content' . DS . 'PRODUCTS' . DS . $sapWithoutDots, 0755, true);
             $this->Session->setFlash('PRODUCT CONTENT folder has been created', 'default', array('class' => 'success'));
             $this->redirect(array('action' => 'edit/' . $id));
         }

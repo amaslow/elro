@@ -93,7 +93,8 @@
 <?php
 
 $sapWithoutDots = str_replace(".", "", $item['Item']['SAP']);
-$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
+//$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
+$directory = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
 $certDirectory = "G" . DS . "S&L_Data" . DS . "QC" . DS . "Certificates" . DS;
 
 echo $this->Form->create('Item', array(
@@ -221,7 +222,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 $tabCertNum = 1; $tabCertDisp = 'block'; $tabCertId = 'current';
                 $tabStandNum = 2; $tabStandDisp = 'block';
                 $tabCompNum = 11; $tabCompDisp = 'none'; $tabCompId = null;
-                if ($item['Item']['EUP'] == 1) {
+                if (strlen($item['Item']['KIND_BULB']) > 0) {
                     $tabErpNum = 3; $tabErpDisp = 'block';
                 }   else {
                         $tabErpNum = 13; $tabErpDisp = 'none';
@@ -255,7 +256,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 $tabPcNum = 1; $tabPcDisp = 'block'; $tabPcId = 'current';
                 if (strlen($item['Item']['COMPONENT1']) == 0) {
                     $tabCompNum = 11; $tabCompDisp = 'none'; $tabCompId = null;
-                    if ($item['Item']['EUP'] == 1) {
+                    if (strlen($item['Item']['KIND_BULB']) > 0) {
                         $tabErpNum = 2; $tabErpDisp = 'block';
                     }   else {
                             $tabErpNum = 13; $tabErpDisp = 'none';
@@ -283,7 +284,9 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
         <table class="components">
         <?php for ($i = 1; $i < 11; $i++):
             ${'sapWithoutDots_comp' . $i} = str_replace(".", "", ${'item_comp' . $i}['Item']['SAP']);
-            ${'directory_comp' . $i} = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . ${'sapWithoutDots_comp' . $i} . DS;
+            //${'directory_comp' . $i} = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . ${'sapWithoutDots_comp' . $i} . DS;
+            ${'directory_comp' . $i} = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . ${'sapWithoutDots_comp' . $i} . DS;
+            
             $imgFile2 = ${'directory_comp' . $i} . "LR_" . ${'sapWithoutDots_comp' . $i} . "_2.jpg";
             $imgFile3 = ${'directory_comp' . $i} . "LR_" . ${'sapWithoutDots_comp' . $i} . "_3.jpg";
             $imgFile10 = ${'directory_comp' . $i} . "LR_" . ${'sapWithoutDots_comp' . $i} . "_10.jpg";
@@ -420,7 +423,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 <td><?php echo $this->Form->input('CPD_NB', array('readonly' => 'readonly', 'size' => '10')); ?></td>
             </tr>
             <?php endif;
-            if ($item['Item']['EUP']==1):?>
+            if ($item['Item']['EUP']==1 || $item['Item']['FLUX']==1):?>
             <tr>
                 <td style="text-align: right; color: blue; font-weight: bold">ErP</td>
                 <td><?php echo $this->Form->input('EUP', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'return readOnlyCheckBox()')); ?></td>
@@ -435,11 +438,11 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 $ed = $erp_date->format('Y-m-d');
                 $today= new DateTime();
                 $td = $today->format('Y-m-d');
-                if($td < $ed){
+                if($td < $ed):
                     $col='black';
-                } else {
+                else:
                     $col='red';
-                }
+                endif;
                 echo '<td style="color: '.$col.'" colspan="3">' . '6000h => '.$ed . '</td>';
                 endif;
             if ($item['Item']['FLUX']==1):?>
@@ -714,7 +717,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
             </tr>
             <?php endif;?>
         </table>
-            <?php if ($colX <> 'red' and colY <> 'red'):?>
+            <?php if ($textX <> '' and $colX = 'green' and $textY <> '' and $colY = 'green'):?>
         <p style="text-align: center;"><i><b> Not suitable for household room illumination</b></i></p>
             <?php endif;?>
         <label style="color: green; font-style: italic; font-size: smaller;">Packaging</label>
@@ -840,7 +843,8 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
             <tr>
                 <?php
                 $sapWithoutDots = str_replace(".", "", $item_supplier[$i]['Item']['SAP']);
-                $directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
+                //$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
+                $directory = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
                 $imgFile2 = $directory . "LR_" . $sapWithoutDots . "_2.jpg";
                 $imgFile3 = $directory . "LR_" . $sapWithoutDots . "_3.jpg";
                 $imgFile4 = $directory . "LR_" . $sapWithoutDots . "_4.jpg";
@@ -878,7 +882,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
         </table>
         <?php 
         if ($this->Session->read('Auth.User') && (AuthComponent::user('group') == 0 || AuthComponent::user('id') == 19)):
-            if ($item['Item']['EUP'] == 1):
+            if (strlen($item['Item']['KIND_BULB']) > 0):
                 echo $this->Form->postLink();
                 echo $this->Form->postLink('COPY certificates & standards', array('action' => 'copyCert', $item['Item']['id']), array('class' => 'button','confirm' => 'Copy all certificates and standards info from this item between choosed items?'));
                 echo $this->Form->postLink('COPY ErP', array('action' => 'copyERP', $item['Item']['id']), array('class' => 'button','style'=>'margin-right:250px;','confirm' => 'Copy all ErP info from this item between choosed items?'));

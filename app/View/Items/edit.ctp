@@ -204,7 +204,8 @@
 </head>
 <?php
 $sapWithoutDots = str_replace(".", "", $item['Item']['SAP']);
-$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
+//$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
+$directory = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
 $certDirectory = "G" . DS . "S&L_Data" . DS . "QC" . DS . "Certificates" . DS;
 echo $this->Form->create('Item', array(
     'inputDefaults' => array(

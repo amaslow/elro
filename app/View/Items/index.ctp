@@ -60,7 +60,8 @@ echo $this->Form->end();
         <tr>
             <?php
             $sapWithoutDots = str_replace(".", "", $item['Item']['SAP']);
-            $directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
+            //$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
+            $directory = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
             $imgFile2 = $directory . "LR_" . $sapWithoutDots . "_2.jpg";
             $imgFile3 = $directory . "LR_" . $sapWithoutDots . "_3.jpg";
             $imgFile10 = $directory . "LR_" . $sapWithoutDots . "_10.jpg";
