@@ -451,7 +451,27 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                 <td><?php echo $this->Form->input('FLUX_TR', array('readonly' => 'readonly', 'size' => '10'));?></td>
             <?php endif;?>
             </tr>
-            <?php endif; ?>
+            <?php if (strlen($item['Item']['ErP_DIR2'])>0 || strlen($item['Item']['ErP_TR2'])>0 || strlen($item['Item']['ErP_DATE2'])>0 || strlen($item['Item']['ErP_STATUS2'])>0):?>
+            <tr>
+                <td ></td>
+                <td></td>
+                <td colspan="2"><?php echo $this->Form->input('ErP_DIR2', array('readonly' => 'readonly', 'size' => '45')); ?></td>
+                <td><?php echo $this->Form->input('ErP_TR2', array('readonly' => 'readonly', 'size' => '45')); ?></td>
+                <td><?php echo $this->Form->input('ErP_DATE2', array('type' => 'text', 'readonly' => 'readonly', 'size' => '9')); ?></td>
+                <td><?php echo $this->Form->input('ErP_STATUS2', array('readonly' => 'readonly', 'size' => '10')); ?></td>
+            </tr>
+            <?php endif;
+            if (strlen($item['Item']['ErP_DIR3'])>0 || strlen($item['Item']['ErP_TR3'])>0 || strlen($item['Item']['ErP_DATE3'])>0 || strlen($item['Item']['ErP_STATUS3'])>0):?>
+            <tr>
+                <td ></td>
+                <td></td>
+                <td colspan="2"><?php echo $this->Form->input('ErP_DIR3', array('readonly' => 'readonly', 'size' => '45')); ?></td>
+                <td><?php echo $this->Form->input('ErP_TR3', array('readonly' => 'readonly', 'size' => '45')); ?></td>
+                <td><?php echo $this->Form->input('ErP_DATE3', array('type' => 'text', 'readonly' => 'readonly', 'size' => '9')); ?></td>
+                <td><?php echo $this->Form->input('ErP_STATUS3', array('readonly' => 'readonly', 'size' => '10')); ?></td>
+            </tr>
+            <?php endif;
+            endif; ?>
             <tr>
                 <td style="text-align: right; color: blue;">RoHS</td>
                 <td><?php echo $this->Form->input('ROHS', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'return readOnlyCheckBox()')); ?></td>

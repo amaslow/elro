@@ -555,13 +555,29 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
             <tr>
                 <td style="text-align: right; color: blue; font-weight: bold">ErP</td>
                 <td><?php echo $this->Form->input('EUP', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'cert_set_text(this.checked,this.id)')); ?></td>
-                <td colspan="2"><?php echo $this->Form->input('EUP_CE', array('options'=>array("EU 874/2012"=>"EU 874/2012","EU 1194/2012"=>"EU 1194/2012","EU 1194/2012, 874/2012"=>"EU 1194/2012, 874/2012","EU 1194/2012, 244/2009, 859/2009"=>"EU 1194/2012, 244/2009, 859/2009","EU 1194/2012, 244/2009, 859/2009, 874/2012"=>"EU 1194/2012, 244/2009, 859/2009, 874/2012","EU 244/2009, 859/2009, 874/2012"=>"EU 244/2009, 859/2009, 874/2012","EU 245/2009, 874/2012"=>"EU 245/2009, 874/2012"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['EUP_CE']));?></td>
+                <td colspan="2"><?php echo $this->Form->input('EUP_CE', array('options'=>array("EU 874/2012"=>"EU 874/2012","EU 1194/2012"=>"EU 1194/2012","EU 244/2009, 859/2009"=>"EU 244/2009, 859/2009"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['EUP_CE']));?></td>
                 <td><?php echo $this->Form->input('EUP_TR', array( 'size' => '45')); ?></td>
                 <td><?php echo $this->Form->input('EUP_DATE', array('type' => 'text',  'size' => '9')); ?></td>
                 <td><?php echo $this->Form->input('EUP_STATUS', array('options'=>array("Initial,1000h"=>"Initial,1000h","2000h"=>"2000h","6000h"=>"6000h"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['EUP_STATUS']));?></td>
                 <td style="text-align: right; color: blue;">Flux Rep.</td>
                 <td><?php echo $this->Form->input('FLUX', array('div' => false, 'label' => false, 'type' => 'checkbox', 'onClick' => 'cert_set_text(this.checked,this.id)')); ?></td>
                 <td><?php echo $this->Form->input('FLUX_TR', array('options'=>array("TR"=>"TR","MISSING"=>"MISSING"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['FLUX_TR']));?></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2"><?php echo $this->Form->input('ErP_DIR2', array('options'=>array("EU 874/2012"=>"EU 874/2012","EU 1194/2012"=>"EU 1194/2012","EU 244/2009, 859/2009"=>"EU 244/2009, 859/2009"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['ErP_DIR2']));?></td>
+                <td><?php echo $this->Form->input('ErP_TR2', array( 'size' => '45')); ?></td>
+                <td><?php echo $this->Form->input('ErP_DATE2', array('type' => 'text',  'size' => '9')); ?></td>
+                <td><?php echo $this->Form->input('ErP_STATUS2', array('options'=>array("Initial,1000h"=>"Initial,1000h","2000h"=>"2000h","6000h"=>"6000h"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['ErP_STATUS2']));?></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2"><?php echo $this->Form->input('ErP_DIR3', array('options'=>array("EU 874/2012"=>"EU 874/2012","EU 1194/2012"=>"EU 1194/2012","EU 244/2009, 859/2009"=>"EU 244/2009, 859/2009"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['ErP_DIR3']));?></td>
+                <td><?php echo $this->Form->input('ErP_TR3', array( 'size' => '45')); ?></td>
+                <td><?php echo $this->Form->input('ErP_DATE3', array('type' => 'text',  'size' => '9')); ?></td>
+                <td><?php echo $this->Form->input('ErP_STATUS3', array('options'=>array("Initial,1000h"=>"Initial,1000h","2000h"=>"2000h","6000h"=>"6000h"),'empty'=>'', 'label'=>false, 'selected'=>$item['Item']['ErP_STATUS3']));?></td>
             </tr>
             <tr>
                 <td style="text-align: right; color: blue;">RoHS</td>
