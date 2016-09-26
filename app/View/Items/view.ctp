@@ -93,9 +93,8 @@
 <?php
 
 $sapWithoutDots = str_replace(".", "", $item['Item']['SAP']);
-//$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
 $directory = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
-$certDirectory = "G" . DS . "S&L_Data" . DS . "QC" . DS . "Certificates" . DS;
+$certDirectory = "G" . DS . "QC" . DS . "Certificates" . DS;
 
 echo $this->Form->create('Item', array(
     'inputDefaults' => array(
@@ -284,7 +283,6 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
         <table class="components">
         <?php for ($i = 1; $i < 11; $i++):
             ${'sapWithoutDots_comp' . $i} = str_replace(".", "", ${'item_comp' . $i}['Item']['SAP']);
-            //${'directory_comp' . $i} = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . ${'sapWithoutDots_comp' . $i} . DS;
             ${'directory_comp' . $i} = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . ${'sapWithoutDots_comp' . $i} . DS;
             
             $imgFile2 = ${'directory_comp' . $i} . "LR_" . ${'sapWithoutDots_comp' . $i} . "_2.jpg";
@@ -863,7 +861,6 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
             <tr>
                 <?php
                 $sapWithoutDots = str_replace(".", "", $item_supplier[$i]['Item']['SAP']);
-                //$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
                 $directory = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
                 $imgFile2 = $directory . "LR_" . $sapWithoutDots . "_2.jpg";
                 $imgFile3 = $directory . "LR_" . $sapWithoutDots . "_3.jpg";

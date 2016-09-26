@@ -233,6 +233,14 @@ class ItemsController extends AppController {
                 'EUP_STATUS' => (isset($item['Item']['EUP_STATUS']) ? "'" . $item['Item']['EUP_STATUS'] . "'" : null),
                 'FLUX' => ($item['Item']['FLUX'] == 0 ? 0 : 1),
                 'FLUX_TR' => (isset($item['Item']['FLUX_TR']) ? "'" . $item['Item']['FLUX_TR'] . "'" : null),
+                'ErP_DIR2' => (isset($item['Item']['ErP_DIR2']) ? "'" . $item['Item']['ErP_DIR2'] . "'" : null),
+                'ErP_TR2' => (isset($item['Item']['ErP_TR2']) ? "'" . $item['Item']['ErP_TR2'] . "'" : null),
+                'ErP_DATE2' => (isset($item['Item']['ErP_DATE2']) ? "'" . $item['Item']['ErP_DATE2'] . "'" : null),
+                'ErP_STATUS2' => (isset($item['Item']['ErP_STATUS2']) ? "'" . $item['Item']['ErP_STATUS2'] . "'" : null),
+                'ErP_DIR3' => (isset($item['Item']['ErP_DIR3']) ? "'" . $item['Item']['ErP_DIR3'] . "'" : null),
+                'ErP_TR3' => (isset($item['Item']['ErP_TR3']) ? "'" . $item['Item']['ErP_TR3'] . "'" : null),
+                'ErP_DATE3' => (isset($item['Item']['ErP_DATE3']) ? "'" . $item['Item']['ErP_DATE3'] . "'" : null),
+                'ErP_STATUS3' => (isset($item['Item']['ErP_STATUS3']) ? "'" . $item['Item']['ErP_STATUS3'] . "'" : null),                        
                 'KK' => ($item['Item']['KK'] == 0 ? 0 : 1),
                 'KK_CE' => (isset($item['Item']['KK_CE']) ? "'" . $item['Item']['KK_CE'] . "'" : null),
                 'KK_DATE' => (isset($item['Item']['KK_DATE']) ? "'" . $item['Item']['KK_DATE'] . "'" : null),
@@ -330,7 +338,7 @@ class ItemsController extends AppController {
         $item = $this->Item->findById($id);
         $this->Item->id = $id;
         $item_folder = str_replace('/', '_', $this->Item->field('ITEM'));
-        $certDirectory = 'img' . DS . 'G' . DS . 'S&L_Data' . DS . 'QC' . DS . 'Certificates' . DS . $item_folder;
+        $certDirectory = 'img' . DS . 'G' . DS . 'QC' . DS . 'Certificates' . DS . $item_folder;
         $certSubDirectory = $certDirectory . DS . '(' . (($this->Item->field('ITEM_S')=='') ? $this->Item->field('ITEM') : $this->Item->field('ITEM_S')) . ')_' . str_replace('.', '', (($this->Item->field('SUPPLIER')=='') ? 'XXX' : $this->Item->field('SUPPLIER')));
         if ($this->request->is('post') || $this->request->is('put')) {
             mkdir($certSubDirectory . DS . 'Correspondence & QC', 0755, true);

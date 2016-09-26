@@ -350,7 +350,7 @@ function extract_emails_from($string) {
 </tr>
 </table>
 <?php
-$supplierMainDirectory = "G" . DS . "S&L_Data" . DS . "QC" . DS . "Suppliers" . DS . "Asia" . DS;
+$supplierMainDirectory = "G" . DS . "QC" . DS . "Suppliers" . DS . "Asia" . DS;
 if (isset($supplier['Supplier']['FOLDER']) && file_exists('img' . DS . $supplierMainDirectory . $supplier['Supplier']['FOLDER'])) {
     echo $this->Html->link('Folder', array('controller' => 'img' . DS . $supplierMainDirectory . $supplier['Supplier']['FOLDER']), array('target' => '_blank', 'class' => 'button'));
 }

@@ -204,9 +204,8 @@
 </head>
 <?php
 $sapWithoutDots = str_replace(".", "", $item['Item']['SAP']);
-//$directory = "G" . DS . "S&L_Data" . DS . "Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
 $directory = "X" . DS . "Smartwares - Product Content" . DS . "PRODUCTS" . DS . $sapWithoutDots . DS;
-$certDirectory = "G" . DS . "S&L_Data" . DS . "QC" . DS . "Certificates" . DS;
+$certDirectory = "G" . DS . "QC" . DS . "Certificates" . DS;
 echo $this->Form->create('Item', array(
     'inputDefaults' => array(
         'label' => false,
@@ -260,7 +259,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
                             "FIRST ALERT"=>"FIRST ALERT","FLAMINGO"=>"FLAMINGO",
                             "PL GAMMA"=>"PL GAMMA","PL GAMMA / JDB"=>"PL GAMMA / JDB","PL GAMMA / OK"=>"PL GAMMA / OK","PL GAMMA BE"=>"PL GAMMA BE","PL GAMMA NL"=>"PL GAMMA NL",
                             "PL HEMA"=>"PL HEMA","HOFER"=>"HOFER","PL HOFER"=>"PL HOFER","PL HOMEBASE"=>"PL HOMEBASE","HOME EASY"=>"HOME EASY","HOMEEASY"=>"HOMEEASY","HOMEWIZARD"=>"HOMEWIZARD","HOME WIZARD"=>"HOME WIZARD",
-                            "IGLOW"=>"IGLOW","PL IGLOW"=>"PL IGLOW","PL INTERTOYS"=>"PL INTERTOYS","PL ISY"=>"PL ISY",
+                            "ICA"=>"ICA","PL ICA"=>"PL ICA","IGLOW"=>"IGLOW","PL IGLOW"=>"PL IGLOW","PL INTERTOYS"=>"PL INTERTOYS","PL ISY"=>"PL ISY",
                             "PL KONZUM"=>"PL KONZUM","PL KWANTUM"=>"PL KWANTUM",
                             "LIEF"=>"LIEF","PL LIEF"=>"PL LIEF","PL LUXTOOLS"=>"PL LUXTOOLS",
                             "MAPE"=>"MAPE","MIRO"=>"MIRO","MUMBI"=>"MUMBI","PL MUMBI"=>"PL MUMBI",
@@ -858,7 +857,7 @@ echo $this->Form->input('id', array('hidden' => 'hidden'));
 <!--                </td>
                 <td>
                     <?php
-                    $erp_spectrum = "G/S&L_Data/QC/Spectrum/LR_" . $sapWithoutDots . "_34.jpg";
+                    $erp_spectrum = "G/QC/Spectrum/LR_" . $sapWithoutDots . "_34.jpg";
                     if (file_exists($erp_spectrum)) {
                         $data = getimagesize($erp_spectrum);
                         $imgWidth = $data[0];

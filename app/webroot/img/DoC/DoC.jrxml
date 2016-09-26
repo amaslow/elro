@@ -140,7 +140,7 @@ The Netherlands]]></text>
             </staticText>
             <image>
                 <reportElement x="361" y="35" width="148" height="40" uuid="a5d5b49e-5708-482b-af2a-a3aefcc1bfec"/>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/smartwares.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/smartwares.jpg"]]></imageExpression>
             </image>
             <staticText>
                 <reportElement x="0" y="92" width="547" height="15" uuid="dcf32eb9-b450-417a-a912-a4897b9ea982"/>
@@ -627,71 +627,71 @@ Quality Manager]]></text>
             </staticText>
             <image scaleImage="FillFrame" hAlign="Left" vAlign="Middle">
                 <reportElement x="1" y="804" width="195" height="75" uuid="0b6bf763-1c8c-4fa6-98f4-934103d73858"/>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/sign.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/sign.jpg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="301" y="778" width="90" height="26" uuid="16d0f06a-97da-4518-a9c7-249d21beb4f8">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="mumbi"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/Mumbi.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/Mumbi.jpg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="301" y="778" width="90" height="26" uuid="34e279e5-6778-4e49-8abc-5118c6d2c730">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="EDEN"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/EDEN.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/EDEN.jpg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="301" y="778" width="90" height="26" uuid="d7ea194d-de7a-4fce-b085-8cec3372e31f">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="EDENPRO"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/EDEN.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/EDEN.jpg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="301" y="778" width="99" height="38" uuid="8deade5b-6354-44ca-9af4-69adc29c70b5">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="ELRO"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/ELRO.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/ELRO.jpg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="301" y="778" width="99" height="38" uuid="6cfa7f1d-02aa-475d-ba17-64c81cdb9798">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="FLAMINGO"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/FLAMINGO.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/FLAMINGO.jpg"]]></imageExpression>
             </image>
             <image hAlign="Center" vAlign="Middle">
                 <reportElement x="301" y="778" width="99" height="38" uuid="d9f14c1a-06ae-49a3-820a-876b7617f4df">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="POWERTEC"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/POWERTEC.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/POWERTEC.jpg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="318" y="764" width="73" height="52" uuid="596b82c9-a058-4c7c-88c4-f0af0471d95b">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="ELTRIC"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/Eltric.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/Eltric.jpg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="301" y="778" width="100" height="33" uuid="4a3a8feb-49b4-49af-922c-2234dd86346f">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="BYRON"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/BYRON1.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/BYRON1.jpg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="301" y="776" width="118" height="35" uuid="11c16e17-c8c4-4f6d-9419-3c9250ff2220">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="RANEX"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/Ranex.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/Ranex.jpg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="313" y="773" width="88" height="43" uuid="0b96e865-6bc1-4731-9a9d-03041b1d7f7a">
                     <printWhenExpression><![CDATA[$F{ITEMS_BRAND}=="BAVARIA"]]></printWhenExpression>
                 </reportElement>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/BAVARIA.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/BAVARIA.jpg"]]></imageExpression>
             </image>
             <image>
                 <reportElement x="329" y="828" width="43" height="29" uuid="47db59b6-c5c0-422e-84e9-89f699c3c9e0"/>
-                <imageExpression><![CDATA["./../G/S&L_Data/QC/Database/Items/Reports/CE.jpg"]]></imageExpression>
+                <imageExpression><![CDATA["./../G/QC/Database/Items/Reports/CE.jpg"]]></imageExpression>
             </image>
             <textField isBlankWhenNull="true">
                 <reportElement x="430" y="815" width="110" height="38" isRemoveLineWhenBlank="true" uuid="883e3dd4-d9aa-41df-9588-4d07116f48be">
